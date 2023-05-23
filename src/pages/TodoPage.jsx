@@ -1,64 +1,82 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Footer, Header, TodoCollection, TodoInput } from 'components';
+import { createTodo, getTodos, patchTodo, deleteTodo } from 'api/todos';
 
-const dummyTodos = [
-  {
-    title: 'Learn react-router',
-    isDone: true,
-    id: 1,
-  },
-  {
-    title: 'Learn to create custom hooks',
-    isDone: false,
-    id: 2,
-  },
-  {
-    title: 'Learn to use context',
-    isDone: true,
-    id: 3,
-  },
-  {
-    title: 'Learn to implement auth',
-    isDone: false,
-    id: 4,
-  },
-];
+
 
 const TodoPage = () => {
   const [inputValue, setInputValue] = useState('');
-  const [todos, setTodos] = useState(dummyTodos);
+  const [todos, setTodos] = useState([]);
 
-  function handleInputChange(value) {
+  const handleInputChange = (value) => {
     setInputValue(value);
   }
 
-  function handleAddTodo() {
-    if (inputValue.length === 0) return;
-    setTodos([
-      ...todos,
-      {
-        title: inputValue,
-        isDone: false,
-        id: Math.random() * 100,
-      },
-    ]);
-    setInputValue('');
+  const handleAddTodo = async () => {
+    if (inputValue.length === 0) {
+      return;
+    }
+
+    try {
+      const data = await createTodo({
+      title: inputValue,
+      isDone: false,
+      })
+
+      setTodos([
+        ...todos,
+        {
+          id: data.id,
+          title: data.title,
+          isDone: data.isDone,
+          isEdit: false,
+        },
+      ]);
+
+      setInputValue('');
+
+    } catch (error) {
+      console.error(error)
+    }
   }
 
-  function handleKeyPress() {
-    if (inputValue.length === 0) return;
-    setTodos([
-      ...todos,
-      {
-        title: inputValue,
-        isDone: false,
-        id: Math.random() * 100,
-      },
-    ]);
-    setInputValue('');
+  const handleKeyPress = async () => {
+    if (inputValue.length === 0) {
+      return;
+    }
+
+    try {
+      const data = await createTodo({
+      title: inputValue,
+      isDone: false,
+      })
+
+      setTodos([
+        ...todos,
+        {
+          id: data.id,
+          title: data.title,
+          isDone: data.isDone,
+          isEdit: false,
+        },
+      ]);
+
+      setInputValue('');
+
+    } catch (error) {
+      console.error(error)
+    }
   }
 
-  function handleToggleDone(id) {
+
+  const handleToggleDone = async (id) => {
+    const currentTodo = todos.find((todo) => todo.id === id)
+
+    try {
+      await patchTodo({
+      id,
+      isDone: !currentTodo.isDone
+    })
     setTodos((prevTodos) => {
       return prevTodos.map((todo) => {
         if (todo.id === id) {
@@ -70,9 +88,12 @@ const TodoPage = () => {
         return todo;
       });
     });
+    } catch (error) {
+      console.error(error)
+    }
   }
 
-  function handleChangeMode({ id, isEdit }) {
+  const handleChangeMode = ({ id, isEdit }) => {
     setTodos((prevTodos) => {
       return prevTodos.map((todo) => {
         if (todo.id === id) {
@@ -89,7 +110,13 @@ const TodoPage = () => {
     });
   }
 
-  function handleSave({ id, title }) {
+  const handleSave = async ({ id, title }) => {
+    try {
+      await patchTodo({
+        id,
+        title,
+    })
+
     setTodos((prevTodos) => {
       return prevTodos.map((todo) => {
         if (todo.id === id) {
@@ -102,13 +129,38 @@ const TodoPage = () => {
         return todo;
       });
     });
+    } catch (error) {
+      console.error(error)
+    }
+    
   }
 
-  function handleDelete(id) {
-    setTodos((prevTodos) => {
-      return prevTodos.filter((todo) => todo.id !== id);
-    });
+  const handleDelete = async (id) => {
+    try {
+      await deleteTodo(id)
+      setTodos((prevTodos) => {
+        return prevTodos.filter((todo) => todo.id !== id);
+      });
+    } catch (error) {
+      console.error(error)
+    }
   }
+
+  useEffect(() => {
+    const getTodosAsync = async() => {
+
+      try {
+        const todos = await getTodos()
+
+        setTodos(todos.map((todo) => ({
+          ...todo, isEdit: false 
+        })))
+      } catch (error) {
+        console.error(error)
+      }
+    }
+    getTodosAsync()
+  }, [])
 
   return (
     <div>
