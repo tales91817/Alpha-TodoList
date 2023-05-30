@@ -1,6 +1,7 @@
 {
   "name": "todolist-react",
   "version": "0.1.0",
+  "homepage": "https://tales91817.github.io/Alpha-TodoList",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -9,6 +10,7 @@
     "axios": "^0.27.2",
     "clsx": "^1.2.1",
     "eslint": "^7.11.0",
+    "gh-pages": "^4.0.0",
     "json-server": "^0.17.0",
     "jsonwebtoken": "^9.0.0",
     "react": "^18.2.0",
@@ -25,7 +27,9 @@
     "dev-server": "json-server --watch db.json --port 3001",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
