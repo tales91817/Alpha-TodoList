@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/tales91817/Alpha-TodoList/static/css/main.4097c508.chunk.css",
-    "main.js": "/tales91817/Alpha-TodoList/static/js/main.576c0652.chunk.js",
-    "main.js.map": "/tales91817/Alpha-TodoList/static/js/main.576c0652.chunk.js.map",
-    "runtime-main.js": "/tales91817/Alpha-TodoList/static/js/runtime-main.7b0fc454.js",
-    "runtime-main.js.map": "/tales91817/Alpha-TodoList/static/js/runtime-main.7b0fc454.js.map",
-    "static/js/2.fdf845d1.chunk.js": "/tales91817/Alpha-TodoList/static/js/2.fdf845d1.chunk.js",
-    "static/js/2.fdf845d1.chunk.js.map": "/tales91817/Alpha-TodoList/static/js/2.fdf845d1.chunk.js.map",
-    "static/js/3.545c6c32.chunk.js": "/tales91817/Alpha-TodoList/static/js/3.545c6c32.chunk.js",
-    "static/js/3.545c6c32.chunk.js.map": "/tales91817/Alpha-TodoList/static/js/3.545c6c32.chunk.js.map",
-    "index.html": "/tales91817/Alpha-TodoList/index.html",
-    "static/css/main.4097c508.chunk.css.map": "/tales91817/Alpha-TodoList/static/css/main.4097c508.chunk.css.map",
-    "static/js/2.fdf845d1.chunk.js.LICENSE.txt": "/tales91817/Alpha-TodoList/static/js/2.fdf845d1.chunk.js.LICENSE.txt",
-    "static/media/ac-logo.eea79863.svg": "/tales91817/Alpha-TodoList/static/media/ac-logo.eea79863.svg",
-    "static/media/check-active.680985db.svg": "/tales91817/Alpha-TodoList/static/media/check-active.680985db.svg",
-    "static/media/check-circle.ad8591fd.svg": "/tales91817/Alpha-TodoList/static/media/check-circle.ad8591fd.svg",
-    "static/media/check-hover.f1b1bcfd.svg": "/tales91817/Alpha-TodoList/static/media/check-hover.f1b1bcfd.svg"
+    "main.css": "/Alpha-TodoList/static/css/main.4097c508.chunk.css",
+    "main.js": "/Alpha-TodoList/static/js/main.576c0652.chunk.js",
+    "main.js.map": "/Alpha-TodoList/static/js/main.576c0652.chunk.js.map",
+    "runtime-main.js": "/Alpha-TodoList/static/js/runtime-main.a6536ca9.js",
+    "runtime-main.js.map": "/Alpha-TodoList/static/js/runtime-main.a6536ca9.js.map",
+    "static/js/2.65628ba4.chunk.js": "/Alpha-TodoList/static/js/2.65628ba4.chunk.js",
+    "static/js/2.65628ba4.chunk.js.map": "/Alpha-TodoList/static/js/2.65628ba4.chunk.js.map",
+    "static/js/3.545c6c32.chunk.js": "/Alpha-TodoList/static/js/3.545c6c32.chunk.js",
+    "static/js/3.545c6c32.chunk.js.map": "/Alpha-TodoList/static/js/3.545c6c32.chunk.js.map",
+    "index.html": "/Alpha-TodoList/index.html",
+    "static/css/main.4097c508.chunk.css.map": "/Alpha-TodoList/static/css/main.4097c508.chunk.css.map",
+    "static/js/2.65628ba4.chunk.js.LICENSE.txt": "/Alpha-TodoList/static/js/2.65628ba4.chunk.js.LICENSE.txt",
+    "static/media/ac-logo.eea79863.svg": "/Alpha-TodoList/static/media/ac-logo.eea79863.svg",
+    "static/media/check-active.680985db.svg": "/Alpha-TodoList/static/media/check-active.680985db.svg",
+    "static/media/check-circle.ad8591fd.svg": "/Alpha-TodoList/static/media/check-circle.ad8591fd.svg",
+    "static/media/check-hover.f1b1bcfd.svg": "/Alpha-TodoList/static/media/check-hover.f1b1bcfd.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.7b0fc454.js",
-    "static/js/2.fdf845d1.chunk.js",
+    "static/js/runtime-main.a6536ca9.js",
+    "static/js/2.65628ba4.chunk.js",
     "static/css/main.4097c508.chunk.css",
     "static/js/main.576c0652.chunk.js"
   ]
